@@ -34,7 +34,7 @@ export default gql`
   }
   
   type Mutation{
-    createUser(name: String!): User
+    createUser(name: String!, picture: String!): User
     createChannel(name: String!, userId: Int!): Channel
     sendMessage(content: String!, channelId: Int!, userId: Int!): Message
     joinChannel(userId: Int!, chanelId:Int!):Channel

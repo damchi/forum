@@ -20,7 +20,7 @@ export default {
             if (!args.id) {
                 throw new Error('id is required')
             }
-            return users.find((user: { id: number; }) => user.id === +args.id)
+            return getUser(+args.id)
         },
         channel(parent:any, args:any, ctx:any, info:any) {
             if (!args.id) {
@@ -72,7 +72,8 @@ export default {
                 throw new Error('Name is required')
             }
             let name = args.name
-            const user = { id: users.length + 1, name };
+            let picture = args.picture
+            const user = { id: users.length + 1, name,picture };
             pubsub.publish('NEW_USER', { userCreated: user });
             users.push(user)
             return user
@@ -84,13 +85,16 @@ export default {
             if (!args.userId) {
                 throw new Error('userId is required')
             }
-            let name = args.name
-            let userId = []
-            userId.push(args.userId)
-            const channel = { id: channels.length + 1, name, userId };
-            pubsub.publish('NEW_CHANNEL', { channelCreated: channel });
-            channels.push(channel)
-            return channel
+            if (getUser(+args.userId)){
+                let name = args.name
+                let userId = []
+                userId.push(args.userId)
+                const channel = { id: channels.length + 1, name, userId };
+                pubsub.publish('NEW_CHANNEL', { channelCreated: channel });
+                channels.push(channel)
+                return channel
+            }
+
         },
         sendMessage: (parent:any, args:any, context:any) => {
             if (!args.content) {
@@ -147,5 +151,16 @@ function isUserInTheChannel(userId:number,channelId:number)
         return true
     }else {
         throw new Error('The user is not a member of the channel')
+    }
+}
+
+function getUser(userId: number)
+{
+    let user = users.find((user: { id: number; }) => user.id === +userId)
+    if(user){
+        return user;
+
+    }else{
+        throw new Error('The user doesn\'t exist')
     }
 }

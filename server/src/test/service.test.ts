@@ -25,23 +25,33 @@ describe("Channel Schema", () => {
     });
 
     test("Test get one channel", async () => {
-        const query = `
-               {
-          channel($channelId: number) {
-            id
-            name
-          }
-        }
-    `;
-
         const result = await testServer.executeOperation({
-            query: `query getChannel($channelId: Int!){ channel(id: $channelId)}`,
+            query: `query getChannel($channelId: Int!) {
+              channel(id: $channelId) {
+                name
+              }
+            }`,
             variables: { channelId: 1 },
 
 
         });
-        console.log(result)
         expect(result).toHaveProperty("data");
-        expect(result.data.name).toHaveProperty("channel one");
+        expect(result.data?.channel.name).toBe("channel one");
+    });
+
+    test("Test mutation channel", async () => {
+        const result = await testServer.executeOperation({
+            query: `mutation CreateChannel($name: String!, $userId: Int!) {
+              createChannel(name: $name, userId: $userId) {
+                id
+                name
+              }
+            }`,
+            variables: { name: "test", userId: 1 },
+
+
+        });
+        expect(result).toHaveProperty("data");
+        expect(result.data?.createChannel.name).toBe("test");
     });
 });
