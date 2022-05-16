@@ -1,0 +1,5 @@
+/node_modules/
+/.idea/forum.iml
+/.idea/modules.xml
+/.idea/vcs.xml
+.env

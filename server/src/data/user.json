@@ -1,0 +1,38 @@
+ [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "picture": ""
+    },
+    {
+      "id": 2,
+      "name": "Janne Doe",
+      "picture": "/images/icon-1.svg"
+    },
+    {
+      "id": 3,
+      "name": "User three",
+      "picture": "/images/icon-1.svg"
+    },
+    {
+      "id": 4,
+      "name": "",
+      "picture": "/images/icon-1.svg"
+    },
+    {
+      "id": 5,
+      "name": "Janne five",
+      "picture": "/images/icon-1.svg"
+    },
+    {
+      "id": 6,
+      "name": "Janne six",
+      "picture": "/images/icon-1.svg"
+    },
+    {
+      "id": 7,
+      "name": "Janne seven",
+      "picture": "/images/icon-1.svg"
+    }
+  ]
+

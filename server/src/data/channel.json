@@ -1,0 +1,28 @@
+ [
+    {
+      "id": 1,
+      "name": "channel one",
+      "userId": [1,3]
+    },
+    {
+      "id": 2,
+      "name": "channel two",
+      "userId": [1,3]
+    },
+    {
+      "id": 3,
+      "name": "channel three",
+      "userId": [5,3,7]
+    },
+    {
+      "id": 4,
+      "name": "channel four",
+      "userId": []
+    },
+    {
+      "id": 5,
+      "name": "channel five",
+      "userId": [1,3,4,5,6]
+    }
+  ]
+

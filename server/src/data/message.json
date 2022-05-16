@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "channelId": 1,
+    "content": "Message 1 user 1 channel 1",
+    "date": "1652650177032"
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "channelId": 2,
+    "content": "Message 2 User 1 channel 2",
+    "date": "1652650177028"
+  },
+  {
+    "id": 3,
+    "userId": 2,
+    "channelId": 2,
+    "content": "Message 1 user 2 channel 2",
+    "date": "1652650177017"
+  },
+  {
+    "id": 4,
+    "userId": 2,
+    "channelId": 1,
+    "content": "Message 2 user 2 channel 1",
+    "date": "1652650177025"
+  },
+  {
+    "id": 5,
+    "userId": 1,
+    "channelId": 2,
+    "content": "Message 3 user 1 channel 2",
+    "date": "1652650177032"
+  },
+  {
+    "id": 6,
+    "userId": 2,
+    "channelId": 3,
+    "content": "Message 3 user 2 channel 3",
+    "date": ""
+  },
+  {
+    "id": 7,
+    "userId": 3,
+    "channelId": 4,
+    "content": "Message 1 user 3 channel 4",
+    "date": "1652650177022"
+  }
+]
+
